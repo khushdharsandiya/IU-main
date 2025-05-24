@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import ConfirmRide from "../../RideBooking/ConfirmRide";
-import { FaCarSide } from "react-icons/fa";
+import { FaTruck } from "react-icons/fa";
 
-const CarProps = () => {
+const GroceryXL = () => {
   const [selectedMethod, setSelectedMethod] = useState(0);
   const [showAddPayment, setShowAddPayment] = useState(false);
   const [paymentMethods, setPaymentMethods] = useState([
-    { title: "HDFC Credit Card", detail: "xxxx 4352", icon: "💳" },
-    { title: "ICICI Debit Card", detail: "xxxx 5438", icon: "💳" },
-    { title: "user@upi", detail: "", icon: "💳" },
+    { title: "HDFC Credit Card", detail: "xxxx 4242", icon: "💳" },
+    { title: "ICIC Debit Card", detail: "xxxx 5678", icon: "💳" },
+    { title: "user@upi", icon: "💳" },
   ]);
 
   const fareDetails = [
-    { label: "Base fare", amount: 80 },
-    { label: "Distance charge", amount: 80 },
-    { label: "Time charge", amount: 20 },
-    { label: "Taxes & fees", amount: 19 },
+    { label: "Base fare", amount: 160 },
+    { label: "Weight surcharge", amount: 70 },
+    { label: "Distance charge", amount: 60 },
+    { label: "Taxes & fees", amount: 20 },
   ];
 
   const totalFare = fareDetails.reduce((sum, item) => sum + item.amount, 0);
@@ -29,10 +29,10 @@ const CarProps = () => {
 
   return (
     <ConfirmRide
-      pickupLocation="mcdksjn "
-      dropLocation="knkdan"
-      rideType="GreenCar"
-      eta="5 mins"
+      pickupLocation="Supermarket Zone"
+      dropLocation="Apartment Tower B"
+      rideType="GreenXL"
+      eta="8 mins"
       fareDetails={fareDetails}
       totalFare={totalFare}
       paymentMethods={paymentMethods}
@@ -42,10 +42,11 @@ const CarProps = () => {
       onHideAddPayment={() => setShowAddPayment(false)}
       showAddPayment={showAddPayment}
       onAddPayment={handleAddPayment}
-      Route={"/Car-ride"}
-       rideIcon={<FaCarSide />}
+      Route="/grocery-delivery"
+      rideIcon={<FaTruck />}
+
     />
   );
 };
 
-export default CarProps;
+export default GroceryXL;

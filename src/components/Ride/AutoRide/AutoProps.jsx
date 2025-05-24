@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import ConfirmRide from "../../RideBooking/ConfirmRide";
+import { FaTruckPickup } from "react-icons/fa";
 
 const AutoProps = () => {
   const location = useLocation();
@@ -57,6 +58,8 @@ const AutoProps = () => {
       showAddPayment={showAddPayment}
       onAddPayment={handleAddPayment}
       Route={"/auto-ride"}
+      rideIcon={<FaTruckPickup size={22} />}
+
     />
   );
 };

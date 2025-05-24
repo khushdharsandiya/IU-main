@@ -43,6 +43,7 @@ const ServiceOptions = () => {
       desc: "Convenient grocery delivery to your home",
       icon: "/icons/food-pack.png",
       img: "https://images.unsplash.com/photo-1543168256-418811576931?auto=format&fit=crop&w=800&q=80",
+      route: "/grocery-delivery",
     },
   ];
 

@@ -138,9 +138,13 @@
 // export default ConfirmRide;
 
 
+
+
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import AddPaymentMethod from "./AddPaymentMethod";
+import { FaBicycle } from "react-icons/fa";
+
 
 const ConfirmRide = ({
   rideType,
@@ -155,6 +159,7 @@ const ConfirmRide = ({
   showAddPayment,
   onAddPayment,
   Route,
+  rideIcon
 }) => {
   const location = useLocation();
   const {
@@ -169,7 +174,7 @@ const ConfirmRide = ({
           <h2 className="text-2xl font-semibold mb-1">Book Your Ride</h2>
           <p className="text-sm text-gray-400 mb-4">
             {pickupLocation} to {dropLocation}{" "}
-            <Link to={"/book"}>
+            <Link to={"/book-ride"}>
               <span className="text-blue-400 cursor-pointer hover:underline">
                 Edit
               </span>
@@ -179,8 +184,9 @@ const ConfirmRide = ({
           <div className="bg-[#111826] p-4 rounded-lg flex items-center justify-between mb-6">
             <div className="flex items-center gap-4">
               <div className="bg-gray-800 p-3 rounded-full">
-                <i className="fas fa-bicycle text-[#0fa958] text-lg"></i>
+                <span className="text-[#0fa958] text-2xl">{rideIcon}</span>
               </div>
+
               <div>
                 <h3 className="font-semibold text-sm">{rideType}</h3>
                 <p className="text-xs text-gray-400">ETA: {eta}</p>
@@ -219,11 +225,10 @@ const ConfirmRide = ({
               {paymentMethods.map((method, index) => (
                 <div
                   key={index}
-                  className={`flex items-center justify-between p-4 rounded-lg cursor-pointer transition-all ${
-                    selectedMethod === index
-                      ? "border border-green-500 bg-[#111826]"
-                      : "border border-[#2E3748] bg-[#111826] hover:border-green-500"
-                  }`}
+                  className={`flex items-center justify-between p-4 rounded-lg cursor-pointer transition-all ${selectedMethod === index
+                    ? "border border-green-500 bg-[#111826]"
+                    : "border border-[#2E3748] bg-[#111826] hover:border-green-500"
+                    }`}
                   onClick={() => onSelectMethod(index)}
                 >
                   <div className="flex items-center gap-3">

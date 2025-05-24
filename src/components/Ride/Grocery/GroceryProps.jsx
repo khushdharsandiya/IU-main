@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import ConfirmRide from "../../RideBooking/ConfirmRide";
 import { FaBicycle } from "react-icons/fa";
 
-const CourierProps = () => {
+const GroceryProps = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
 
@@ -21,15 +21,15 @@ const CourierProps = () => {
   const [selectedMethod, setSelectedMethod] = useState(0);
   const [showAddPayment, setShowAddPayment] = useState(false);
   const [paymentMethods, setPaymentMethods] = useState([
-    { title: "HDFC Credit Card", detail: "xxxx 4352", icon: "💳" },
-    { title: "ICIC Debit Card", detail: "xxxx 5448", icon: "💳" },
+    { title: "HDFC Credit Card", detail: "xxxx 4242", icon: "💳" },
+    { title: "ICIC Debit Card", detail: "xxxx 5678", icon: "💳" },
     { title: "user@upi", icon: "💳" },
   ]);
 
   const fareDetails = [
-    { label: "Base fare", amount: 40 },
-    { label: "Package handling", amount: 20 },
-    { label: "Distance charge", amount: 70 },
+    { label: "Base fare", amount: 50 },
+    { label: "Grocery weight fee", amount: 30 },
+    { label: "Delivery distance", amount: 20 },
     { label: "Service fee", amount: 15 },
   ];
 
@@ -47,7 +47,7 @@ const CourierProps = () => {
       pickupLocation={pickup}
       dropLocation={dropoff}
       rideType="GreenBike"
-      eta="6 mins"
+      eta="9 mins"
       fareDetails={fareDetails}
       totalFare={totalFare}
       paymentMethods={paymentMethods}
@@ -57,11 +57,11 @@ const CourierProps = () => {
       onHideAddPayment={() => setShowAddPayment(false)}
       showAddPayment={showAddPayment}
       onAddPayment={handleAddPayment}
-      Route={"/courier-ride"}
-             rideIcon={<FaBicycle />}
-      
+      Route="/grocery-delivery"
+      rideIcon={<FaBicycle />}
+
     />
   );
 };
 
-export default CourierProps;
+export default GroceryProps;

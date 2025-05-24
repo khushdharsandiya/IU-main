@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import ConfirmRide from "../../RideBooking/ConfirmRide";
+import { FaTruckPickup } from "react-icons/fa";
+
 
 const GreenAuto = () => {
   const [selectedMethod, setSelectedMethod] = useState(0);
@@ -42,6 +44,8 @@ const GreenAuto = () => {
       showAddPayment={showAddPayment}
       onAddPayment={handleAddPayment}
       Route={"/auto-ride"}
+      rideIcon={<FaTruckPickup size={22} />}
+
     />
   );
 };

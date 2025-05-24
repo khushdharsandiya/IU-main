@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ConfirmRide from "../../RideBooking/ConfirmRide";
+import { FaCarSide } from "react-icons/fa";
 
 const PremiumProps = () => {
   const [selectedMethod, setSelectedMethod] = useState(0);
@@ -42,6 +43,8 @@ const PremiumProps = () => {
       showAddPayment={showAddPayment}
       onAddPayment={handleAddPayment}
       Route={"/Car-ride"}
+      rideIcon={<FaCarSide />}
+
     />
   );
 };

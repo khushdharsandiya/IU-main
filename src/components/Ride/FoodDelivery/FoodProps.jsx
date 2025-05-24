@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import ConfirmRide from "../../RideBooking/ConfirmRide";
+import { FaBicycle } from "react-icons/fa";
 
 const FoodProps = () => {
   const location = useLocation();
@@ -20,8 +21,8 @@ const FoodProps = () => {
   const [selectedMethod, setSelectedMethod] = useState(0);
   const [showAddPayment, setShowAddPayment] = useState(false);
   const [paymentMethods, setPaymentMethods] = useState([
-    { title: "SBI UPI", detail: "user@sbi", icon: "💳" },
-    { title: "PhonePe Wallet", detail: "", icon: "💳" },
+    { title: "HDFC Credit Card", detail: "xxxx 4242", icon: "💳" },
+    { title: "ICIC Debit Card", detail: "xxxx 5678", icon: "💳" },
     { title: "user@upi", icon: "💳" },
   ]);
 
@@ -56,7 +57,9 @@ const FoodProps = () => {
       onHideAddPayment={() => setShowAddPayment(false)}
       showAddPayment={showAddPayment}
       onAddPayment={handleAddPayment}
-      Route={"/food-ride"}
+      Route={"/food-delivery"}
+      rideIcon={<FaBicycle />}
+
     />
   );
 };

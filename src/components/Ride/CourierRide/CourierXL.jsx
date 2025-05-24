@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ConfirmRide from "../../RideBooking/ConfirmRide";
+import {  FaTruck } from "react-icons/fa";
 
 const CourierXL = () => {
   const [selectedMethod, setSelectedMethod] = useState(0);
@@ -41,7 +42,9 @@ const CourierXL = () => {
       onHideAddPayment={() => setShowAddPayment(false)}
       showAddPayment={showAddPayment}
       onAddPayment={handleAddPayment}
-      Route={"/greenxl-ride"}
+      Route={"/courier-ride"}
+      rideIcon={<FaTruck />}
+
     />
   );
 };

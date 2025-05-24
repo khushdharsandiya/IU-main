@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ConfirmRide from "./ConfirmRide";
+import { FaBicycle } from "react-icons/fa";
 
 const BikeProps = () => {
   const [selectedMethod, setSelectedMethod] = useState(0);
@@ -41,7 +42,9 @@ const BikeProps = () => {
       onHideAddPayment={() => setShowAddPayment(false)}
       showAddPayment={showAddPayment}
       onAddPayment={handleAddPayment}
-       Route={"/Bike-ride"}
+      Route={"/Bike-ride"}
+      rideIcon={<FaBicycle />}
+
     />
   );
 };

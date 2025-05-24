@@ -31,6 +31,11 @@ import CourierRide from './components/Ride/CourierRide/CourierRide';
 import CourierXL from './components/Ride/CourierRide/CourierXL';
 import FoodRide from './components/Ride/FoodDelivery/FoodRide';
 import FoodProps from './components/Ride/FoodDelivery/FoodProps';
+import Grocery from './components/Ride/Grocery/Grocery';
+import CourierProps from './components/Ride/CourierRide/CourierProps';
+import FoodXL from './components/Ride/FoodDelivery/FoodXL';
+import GroceryProps from './components/Ride/Grocery/GroceryProps';
+import GroceryXL from './components/Ride/Grocery/GroceryXL';
 
 function App() {
   return (
@@ -71,13 +76,22 @@ function App() {
      {/* Courier Delivery */}
 
             <Route path="/courier-ride" element={<CourierRide />} />
-            <Route path="/fast" element={<AutoProps />} />
+            <Route path="/fast" element={<CourierProps />} />
             <Route path="/luggage" element={<CourierXL />} />
             
-            {/* Food Delivery */}
+      {/* Food Delivery */}
 
             <Route path="/food-delivery" element={<FoodRide />} />
             <Route path="/food" element={<FoodProps />} />
+            <Route path="/foodxl" element={<FoodXL />} />
+
+
+      {/* Grocery Delivery*/}
+
+            <Route path="/grocery-delivery" element={<Grocery />} />
+            <Route path="/grocery" element={<GroceryProps />} />
+            <Route path="/groceryxl" element={<GroceryXL />} />
+
 
          
           </Routes>

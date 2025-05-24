@@ -27,9 +27,9 @@ const FoodRide = () => {
   const tagRoutes = {
     'Fastest Option': '/food',
     'Economical': '/food',
-    'Spacious': '/luggage',
-    'For Groups': '/luggage',
-    'Extra Luggage Space': '/luggage',
+    'Spacious': '/foodxl',
+    'For Groups': '/foodxl',
+    'Extra Luggage Space': '/foodxl',
   };
 
   return (
