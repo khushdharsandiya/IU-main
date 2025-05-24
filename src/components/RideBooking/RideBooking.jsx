@@ -155,6 +155,7 @@ const RideBooking = () => {
                     >
                         Find Rides
                     </Link>
+                     
                 </div>
             </div>
             <Footer />
