@@ -19,23 +19,25 @@ import ServiceOptions from './components/RideBooking/ServiceOptions';
 import BikeRide from './components/RideBooking/BikeRide';
 import RideTrackingPage from './components/RideBooking/RideTrackingPage';
 import RideCompleted from './components/RideBooking/RideCompleted';
-import BikeProps from './components/RideBooking/Props';
-import CarRide from './components/Ride/CarRide/CarRide';
-import CarProps from './components/Ride/CarRide/CarProps';
-import PremiumProps from './components/Ride/CarRide/PremiumProps';
-import GreenXL from './components/Ride/CarRide/GreenXL';
-import AutoRide from './components/Ride/AutoRide/autoRide';
-import AutoProps from './components/Ride/AutoRide/AutoProps';
-import GreenAuto from './components/Ride/AutoRide/GreenAuto';
-import CourierRide from './components/Ride/CourierRide/CourierRide';
-import CourierXL from './components/Ride/CourierRide/CourierXL';
-import FoodRide from './components/Ride/FoodDelivery/FoodRide';
-import FoodProps from './components/Ride/FoodDelivery/FoodProps';
-import Grocery from './components/Ride/Grocery/Grocery';
-import CourierProps from './components/Ride/CourierRide/CourierProps';
-import FoodXL from './components/Ride/FoodDelivery/FoodXL';
-import GroceryProps from './components/Ride/Grocery/GroceryProps';
-import GroceryXL from './components/Ride/Grocery/GroceryXL';
+
+import CarRide from './components/RidePages/CarRide/CarRide';
+import AutoRide from './components/RidePages/AutoRide/autoRide';
+import AutoProps from './components/RidePages/AutoRide/AutoProps';
+import GreenAuto from './components/RidePages/AutoRide/GreenAuto';
+import CarProps from './components/RidePages/CarRide/CarProps';
+import PremiumProps from './components/RidePages/CarRide/PremiumProps';
+import GreenXL from './components/RidePages/CarRide/GreenXL';
+import CourierRide from './components/RidePages/CourierRide/CourierRide';
+import CourierProps from './components/RidePages/CourierRide/CourierProps';
+import CourierXL from './components/RidePages/CourierRide/CourierXL';
+import FoodProps from './components/RidePages/FoodDelivery/FoodProps';
+import FoodRide from './components/RidePages/FoodDelivery/FoodRide';
+import FoodXL from './components/RidePages/FoodDelivery/FoodXL';
+import Grocery from './components/RidePages/Grocery/Grocery';
+import GroceryProps from './components/RidePages/Grocery/GroceryProps';
+import GroceryXL from './components/RidePages/Grocery/GroceryXL';
+import ConfirmRide from './components/RideBooking/ConfirmRide';
+import BikeProps from './components/RideBooking/BikeProps';
 
 function App() {
   return (
@@ -61,45 +63,40 @@ function App() {
             <Route path="/confirm" element={<BikeProps />} />
             <Route path="/ride-tracking" element={<RideTrackingPage />} />
             <Route path="/rating" element={<RideCompleted />} />
-     
-     {/* CarRide */}
+
+            {/* Yahan fix kiya: Remove {...props} */}
+            <Route path="/confirm-ride" element={<ConfirmRide />} />
+
+            {/* CarRide */}
             <Route path="/Car-ride" element={<CarRide />} />
             <Route path="/features/air-conditioned" element={<CarProps />} />
             <Route path="/features/premium-cars" element={<PremiumProps />} />
             <Route path="/features/spacious" element={<GreenXL />} />
 
-     {/* AutoRide */}
+            {/* AutoRide */}
             <Route path="/auto-ride" element={<AutoRide />} />
             <Route path="/economical" element={<AutoProps />} />
             <Route path="/spacious" element={<GreenAuto />} />
 
-     {/* Courier Delivery */}
-
+            {/* Courier Delivery */}
             <Route path="/courier-ride" element={<CourierRide />} />
             <Route path="/fast" element={<CourierProps />} />
             <Route path="/luggage" element={<CourierXL />} />
-            
-      {/* Food Delivery */}
 
+            {/* Food Delivery */}
             <Route path="/food-delivery" element={<FoodRide />} />
             <Route path="/food" element={<FoodProps />} />
             <Route path="/foodxl" element={<FoodXL />} />
 
-
-      {/* Grocery Delivery*/}
-
+            {/* Grocery Delivery*/}
             <Route path="/grocery-delivery" element={<Grocery />} />
             <Route path="/grocery" element={<GroceryProps />} />
             <Route path="/groceryxl" element={<GroceryXL />} />
-
-
-         
           </Routes>
         </Layout>
       </ThemeProvider>
     </div>
   );
 }
-
 
 export default App;

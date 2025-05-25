@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import ConfirmRide from "./ConfirmRide";
 import { FaBicycle } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 
 const BikeProps = () => {
+  const location = useLocation();
+  const { pickupLocation, dropLocation } = location.state || {
+    pickupLocation: "Not Provided",
+    dropLocation: "Not Provided",
+  };
   const [selectedMethod, setSelectedMethod] = useState(0);
   const [showAddPayment, setShowAddPayment] = useState(false);
   const [paymentMethods, setPaymentMethods] = useState([
@@ -29,8 +35,8 @@ const BikeProps = () => {
 
   return (
     <ConfirmRide
-      pickupLocation="Nikki"
-      dropLocation="Naroda"
+      pickupLocation={pickupLocation}
+      dropLocation={dropLocation}
       rideType="GreenBike"
       eta="4 mins"
       fareDetails={fareDetails}

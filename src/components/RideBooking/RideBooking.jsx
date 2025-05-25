@@ -159,6 +159,7 @@ const RideBooking = () => {
                 </div>
             </div>
             <Footer />
+            
         </>
     );
 };

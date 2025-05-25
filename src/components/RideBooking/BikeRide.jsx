@@ -45,7 +45,7 @@ export default function BikeRide() {
           <div>
             <h2 className="text-xl font-semibold">Available Rides</h2>
             <p className="text-sm text-gray-400">
-              Scheduled for 2025-05-08 at 12:26
+             For immediate pickup
             </p>
           </div>
           <Link to="/book-ride">
